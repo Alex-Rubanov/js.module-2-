@@ -213,6 +213,25 @@ window.addEventListener('DOMContentLoaded', () => {
         new MenuCard(img, altimg, title, descr, price, '.menu .container').render());
     });
 
+    // getResources('http://localhost:3000/menu')
+    // .then(data => {
+    //     data.forEach(({img, altimg, title, descr, price}) => {
+    //         const newCard = document.createElement('div');
+    //         newCard.classList.add('menu__item');
+    //         newCard.innerHTML = `
+    //         <img src=${img} alt=${altimg}>
+    //         <h3 class="menu__item-subtitle">${title}</h3>
+    //         <div class="menu__item-descr">${descr}</div>
+    //         <div class="menu__item-divider"></div>
+    //         <div class="menu__item-price">
+    //             <div class="menu__item-cost">Цена:</div>
+    //             <div class="menu__item-total"><span>${price}</span> грн/день</div>
+    //         </div>
+    //         `;
+    //         document.querySelector('.menu .container').append(newCard);
+    //     });
+    // });
+
     // Forms submit
 
     const forms = document.querySelectorAll('form');
