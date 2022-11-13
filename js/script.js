@@ -213,6 +213,8 @@ window.addEventListener('DOMContentLoaded', () => {
         new MenuCard(img, altimg, title, descr, price, '.menu .container').render());
     });
 
+    // Alternative way to add Menucards on website without using classes
+
     // getResources('http://localhost:3000/menu')
     // .then(data => {
     //     data.forEach(({img, altimg, title, descr, price}) => {
@@ -314,6 +316,59 @@ window.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }, 4000);
     }
+
+    // Slider
+
+    const sliders = document.querySelectorAll('.offer__slide'),
+          prevBtn = document.querySelector('.offer__slider-prev'),
+          nextBtn = document.querySelector('.offer__slider-next'),
+          total = document.querySelector('#total'),
+          current = document.querySelector('#current');
+    let slideIndex = 1;
+
+    showSlides(slideIndex);
+
+    function countSlides() {
+        if (sliders.length < 10) {
+            total.textContent = `0${sliders.length}`;
+        } else {
+            total.textContent = `${sliders.length}`;
+        }
+    }
+    countSlides();
+
+    function showSlides(n) {
+        if (n > sliders.length) {
+            slideIndex = 1;
+        } 
+        if (n < 1) {
+            slideIndex = sliders.length;
+        }
+
+        sliders.forEach(el => el.style.display = 'none');
+
+        sliders[slideIndex - 1].style.display = 'block';
+
+        if (sliders.length < 10) {
+            current.textContent = `0${slideIndex}`;
+        } else {
+            current.textContent = slideIndex;
+        }
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    prevBtn.addEventListener('click', () => {
+        plusSlides(-1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+        plusSlides(1);
+    });
+    
+    
     
 });
 

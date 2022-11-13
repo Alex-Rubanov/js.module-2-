@@ -614,8 +614,6 @@ a {
 }
 .hide {
   display: none;
-  animation-name: fade_out;
-  animation-duration: 2s;
 }
 @keyframes fade_in {
   0% {
