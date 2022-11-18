@@ -430,7 +430,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Navigation
 
     function getOnlyDigits(str) {
-        return +str.match(/\d/g).join(' ');
+        return +str.replace(/\D/g, '');
     }
 
     nextBtn.addEventListener('click', () => {
